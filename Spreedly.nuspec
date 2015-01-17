@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ <package>
+   <metadata>
+     <id>Spreedly</id>
+     <version>$version$</version>
+     <authors>Boris Scheiman</authors>
+     <projectUrl>https://github.com/bscheiman/Spreedly</projectUrl>
+     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+     <description>.NET wrapper for Spreedly. If you need anything, hit me up on Twitter: @bscheiman</description>
+     <summary>http://www.spreedly.com</summary>
+     <language>en-US</language>
+     <tags>bscheiman scheiman boris spreedly payment</tags>
+   </metadata>
+</package>
