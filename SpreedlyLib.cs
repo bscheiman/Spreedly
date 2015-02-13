@@ -19,20 +19,24 @@ namespace Spreedly {
             Secret = secret;
         }
 
+        public Task<Gateway> AddGatewayAsync(string gateway) {
+            return PostAsync<Gateway>("gateways.xml", string.Format("<gateway><gateway_type>{0}</gateway_type></gateway>", gateway));
+        }
+
         public Task<Gateways> GetGatewayTokensAsync() {
             return GetAsync<Gateways>("gateways.xml");
         }
 
-        public Task<Transaction> RetainAsync(string token) {
-            return PutAsync<Transaction>("payment_methods/{payment_method_token}/retain.xml", "", new Parameter {
+        public Task<Transaction> RedactAsync(string token) {
+            return PutAsync<Transaction>("payment_methods/{payment_method_token}/redact.xml", "", new Parameter {
                 Name = "payment_method_token",
                 Value = token,
                 Type = ParameterType.UrlSegment
             });
         }
 
-        public Task<Transaction> RedactAsync(string token) {
-            return PutAsync<Transaction>("payment_methods/{payment_method_token}/redact.xml", "", new Parameter {
+        public Task<Transaction> RetainAsync(string token) {
+            return PutAsync<Transaction>("payment_methods/{payment_method_token}/retain.xml", "", new Parameter {
                 Name = "payment_method_token",
                 Value = token,
                 Type = ParameterType.UrlSegment

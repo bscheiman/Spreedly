@@ -13,6 +13,7 @@ namespace Spreedly.Objects {
 
         public Gateway(XElement elem) : base(elem) {
             Name = elem.Element("name").ValueOrDefault();
+            Token = elem.Element("token").ValueOrDefault();
         }
     }
 }
